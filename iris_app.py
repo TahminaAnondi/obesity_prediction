@@ -3,6 +3,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.naive_bayes import GaussianNB
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr
 
 # Load the converted dataset
 @st.cache_data
@@ -68,3 +71,24 @@ st.dataframe(result_df)
 
 # Display accuracy
 st.write(f"Model Accuracy on Test Data: {accuracy * 100:.2f}%")
+
+# Section: Obesity related analysis
+st.title("Obesity related analysis")
+st.subheader("Visualizing the Relationship")
+st.write("""
+Here we plot a scatter plot to see if there is a trend between fat percentage and obesity levels.
+""")
+
+# Visualization using Seaborn (adjusting for Streamlit)
+st.write("Boxplot of BMI vs Obesity Status")
+sns.boxplot(x='ob_BMI', y='bmxbmi', data=df)
+st.pyplot(plt)  # Use st.pyplot to display the plot in Streamlit
+
+# Pearson correlation to check for linear relationship
+corr, p_value = pearsonr(df['bmxbmi'], df['ob_BMI'])
+st.write(f"Pearson correlation: {corr:.2f}, p-value: {p_value:.5f}")
+
+if p_value < 0.05:
+    st.write("There is a significant correlation between BMI and obesity.")
+else:
+    st.write("There is no significant correlation between BMI and obesity.")
