@@ -1,7 +1,7 @@
 # # **Obesity Prediction Using Machine Learning**
 
 ## **Table of Contents**
-1. [Overview](#overview)  
+1. [Overview](##overview)  
 2. [Objective](#objective)  
 3. [Dataset Description](#dataset-description)  
 4. [Methodology](#methodology)  
@@ -10,8 +10,8 @@
 7. [Handling Overfitting](#handling-overfitting)  
 8. [Evaluation Metrics](#evaluation-metrics)  
 9. [How to Run the Project](#how-to-run-the-project)  
-10.[Formulas Explained with Examples](#formulas-explained-with-examples)  
-11.[Output Highlights](#output-highlights)  
+10. [Formulas Explained with Examples](#formulas-explained-with-examples)  
+11. [Output Highlights](#output-highlights)  
 
 ---
 
